@@ -1,13 +1,13 @@
 import {
-  SELECT_CATEGORY,
-  REQUEST_CATEGORIES,
-  RECEIVE_CATEGORIES
+  FETCH_CATEGORIES,
 } from '../actions';
 
-const selectCategory = (state, action) => {
+const selectCategory = (state = [{_id: 1, title: "Category Test"}], action) => {
+  console.log('Action received: ', action);
   switch (action.type) {
-    case SELECT_CATEGORY:
-      return action.category
+    case FETCH_CATEGORIES:
+      console.log(action.payload.data);
+      return action.payload.data;
     default:
       return state
   }
