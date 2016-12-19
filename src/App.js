@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { ButtonToolbar, ButtonGroup, Button } from 'react-bootstrap';
 import GetCategoriesButton from './containers/GetCategoriesButton';
-import CategoriesList from './containers/CategoriesList';
+import AsyncCategoryList from './containers/AsyncCategoryList';
 import ProductsList from './containers/ProductsList';
 import './App.css';
 
@@ -17,7 +17,7 @@ class App extends Component {
         </ButtonToolbar>
         <div className="row">
           <div className="col-md-4">
-            <CategoriesList />
+            <AsyncCategoryList />
           </div>
           <div className="col-md-8">
             <ProductsList />

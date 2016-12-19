@@ -7,9 +7,6 @@ import { Button } from 'react-bootstrap';
 class GetCategoriesButton extends Component {
   render() {
     return (
-      /*
-      <Button onClick={this.onGetCategories}>Get Category</Button>
-      */
       <Button onClick={() => this.props.fetchCategories()}>Get Category</Button>
     );
   }

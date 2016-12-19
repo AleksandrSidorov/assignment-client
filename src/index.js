@@ -7,9 +7,7 @@ import createLogger from 'redux-logger';
 import App from './App';
 import reducer from './reducers';
 
-/*
-import axiosMiddleware from 'redux-axios-middleware';
-*/
+
 const logger = createLogger();
 const store = createStore(
   reducer,
