@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default class CategoriesList extends Component {
+class ProductsList extends Component {
+
+  renderProducts(productData) {
+    return (
+      <tr key={productData._id}>
+        <th>{productData._id}</th>
+        <th>{productData.title}</th>
+        <th>{productData.buy_price}</th>
+        <th>{productData.sell_price}</th>
+        <th>Actions</th>
+      </tr>
+    )
+  }
+
   render() {
     return (
       <table className="table table-hover">
@@ -13,7 +27,16 @@ export default class CategoriesList extends Component {
             <th>Actions</th>
           </tr>
         </thead>
+        <tbody>
+          {this.props.products.map(this.renderProducts)}
+        </tbody>
       </table>
     )
   }
 }
+
+function mapStateToProps({ products }) {
+  return { products };
+}
+
+export default connect(mapStateToProps)(ProductsList);

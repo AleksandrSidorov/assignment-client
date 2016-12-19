@@ -18,7 +18,9 @@ export function fetchCategories() {
 }
 
 export function fetchProducts(catId) {
+  console.log('arg: ', catId);
   const request = axios.get(`http://localhost:8008/products/${catId}`);
+  console.log('Action fired - fetchProducts', request);
   return {
     type: FETCH_PRODUCTS,
     payload: request
