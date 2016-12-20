@@ -35,8 +35,8 @@ class ProductsList extends Component {
   }
 }
 
-function mapStateToProps({ products }) {
-  return { products };
+function mapStateToProps({ products, currentCategory }) {
+  return { products, currentCategory };
 }
 
 export default connect(mapStateToProps)(ProductsList);
